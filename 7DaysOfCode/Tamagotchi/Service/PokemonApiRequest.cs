@@ -9,7 +9,6 @@ namespace Tamagotchi.Service
     {
         public List<TamagotchiSpecies> GetAvailableSpecies()
         {
-                // Obter as características do Pokémon escolhido
             var client = new RestClient($"https://pokeapi.co/api/v2/pokemon/?limit=4");
             var request = new RestRequest("",Method.Get);
             var response = client.Execute(request);
