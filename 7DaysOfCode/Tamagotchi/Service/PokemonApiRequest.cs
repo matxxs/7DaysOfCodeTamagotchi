@@ -1,28 +1,31 @@
 using System;
+using Tamagotchi.Model;
 using Newtonsoft.Json;
 using RestSharp;
 
-namespace Tmagotchi
+namespace Tamagotchi.Service
 {
     public class PokemonApiRequest
     {
-        public void GetSpeciesDetails()
+        public List<TamagotchiSpecies> GetAvailableSpecies()
         {
                 // Obter as características do Pokémon escolhido
-            var client = new RestClient($"https://pokeapi.co/api/v2/pokemon/");
+            var client = new RestClient($"https://pokeapi.co/api/v2/pokemon/?limit=4");
             var request = new RestRequest("",Method.Get);
             var response = client.Execute(request);
 
+            var requestSpecies =  JsonConvert.DeserializeObject<TamagotchiApiResult>(response.Content);
+            return requestSpecies.Results;
+     
+        }
 
-            if(response.StatusCode == System.Net.HttpStatusCode.OK){
+        public TamagotchiAbility GetSpeciesAbility(TamagotchiSpecies species)
+        {
+            var client = new RestClient($"https://pokeapi.co/api/v2/pokemon/{species.Name}");
+            var request = new RestRequest("",Method.Get);
+            var response = client.Execute(request);    
 
-                Console.WriteLine(response.Content);
-
-            } else {
-
-                Console.WriteLine(response.ErrorException);
-            }
-            Console.ReadKey();   
+            return JsonConvert.DeserializeObject<TamagotchiAbility>(response.Content);
         }
     }
 }

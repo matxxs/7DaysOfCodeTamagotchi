@@ -1,13 +1,17 @@
 ﻿using System;
+using Tamagotchi.Controller;
 
-namespace Tmagotchi 
+namespace Tamagotchi
 {
     class Program
     {
         static void Main(string[] args)
         {
-            PokemonApiRequest pokemonApiRequest = new PokemonApiRequest();
-           pokemonApiRequest.GetSpeciesDetails();
-        } 
+
+            TamagotchiController tamagotchiController = new TamagotchiController();  
+            tamagotchiController.Play();          
+        }
+
+
     }
 }
