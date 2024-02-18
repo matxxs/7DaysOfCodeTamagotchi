@@ -11,7 +11,6 @@ namespace Tamagotchi.Controller
         private List<TamagotchiSpecies> availableMascot { get; set; }
         private List<TamagotchiAbility> adoptedSpecies { get; set; }
 
-
         public TamagotchiController()
         {
             tamagotchiView = new TamagotchiView();
@@ -33,33 +32,37 @@ namespace Tamagotchi.Controller
                 switch (choicePlayer)
                 {
                     case 1:
-                        tamagotchiView.AdoptionMenu();
-                        choicePlayer = tamagotchiView.GetPlayerChoise(3);
+                        while(true){
+                            tamagotchiView.AdoptionMenu();
+                            choicePlayer = tamagotchiView.GetPlayerChoise(3);
 
-                        switch (choicePlayer)
-                        {
-                            case 1:
-                                tamagotchiView.GetavailableMascot(availableMascot);
-                                int choiceMascot = tamagotchiView.GetMascotChosen(availableMascot);
-                                TamagotchiAbility ability = pokemonApiRequest.GetSpeciesAbility(availableMascot[choiceMascot]);
-                                tamagotchiView.MascotAbilities(ability);
-                                break;
-                            case 2:
-                                tamagotchiView.GetavailableMascot(availableMascot);
-                                choiceMascot = tamagotchiView.GetMascotChosen(availableMascot);
-                                ability = pokemonApiRequest.GetSpeciesAbility(availableMascot[choiceMascot]);
-                                tamagotchiView.MascotAbilities(ability);
-                                Console.Write("\n Confirme a adoção do mascote! (sim/nao): ");
-                                var confirmAdoption = Console.ReadLine().ToLower().Substring(0, 3) == "sim";
+                            switch (choicePlayer)
+                            {
+                                case 1:
+                                    tamagotchiView.GetavailableMascot(availableMascot);
+                                    int choiceMascot = tamagotchiView.GetMascotChosen(availableMascot);
+                                    TamagotchiAbility ability = pokemonApiRequest.GetSpeciesAbility(availableMascot[choiceMascot]);
+                                    tamagotchiView.MascotAbilities(ability);
+                                    break;
+                                case 2:
+                                    tamagotchiView.GetavailableMascot(availableMascot);
+                                    choiceMascot = tamagotchiView.GetMascotChosen(availableMascot);
+                                    ability = pokemonApiRequest.GetSpeciesAbility(availableMascot[choiceMascot]);
+                                    tamagotchiView.MascotAbilities(ability);
+                                    Console.Write("\n Confirme a adoção do mascote! (sim/nao): ");
+                                    var confirmAdoption = Console.ReadLine().ToLower().Substring(0, 3) == "sim";
 
-                                    if (confirmAdoption){
+                                        if (confirmAdoption){
 
-                                        adoptedSpecies.Add(ability);
-                                        Console.WriteLine("\n\nParabéns! Você adotou um " + ability.Name + "!");     
-                                    }
-                                break;
-                            case 3: 
-                                break;
+                                            adoptedSpecies.Add(ability);
+                                            Console.WriteLine("\n\nParabéns! Você adotou um " + ability.Name + "!"); 
+                                        }
+                                    break;
+
+                                case 3: break;
+                            }
+                            if(choicePlayer == 3)
+                                break;     
                         }
                         break;
                     case 2:
@@ -70,27 +73,6 @@ namespace Tamagotchi.Controller
                     default: break;
                 }
             }
-
-
-            // Teste(availableMascot);
-
-            // int choice;
-
-            // while (true)
-            // {
-            //     Console.Write("\n Escolha uma espécie pelo número (1-" + availableMascot.Count + "): ");
-            //     if (int.TryParse(Console.ReadLine(), out choice) && choice >= 1 && choice <= availableMascot.Count)
-            //     {
-            //         break;
-            //     }
-            //     Console.WriteLine("Escolha inválida.");
-            // }
-
-
-            // TamagotchiAbility ability = pokemonApiRequest.GetSpeciesAbility(availableMascot[choice - 1 ]);
-
-            // Menu(ability);
-
         }
     }
 }

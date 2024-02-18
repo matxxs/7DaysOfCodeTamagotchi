@@ -7,11 +7,8 @@ namespace Tamagotchi
     {
         static void Main(string[] args)
         {
-
             TamagotchiController tamagotchiController = new TamagotchiController();  
             tamagotchiController.Play();          
         }
-
-
     }
 }
