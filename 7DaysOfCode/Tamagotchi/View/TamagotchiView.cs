@@ -54,6 +54,17 @@ namespace Tamagotchi.Model
             Console.Write("\n Escolha uma opção: ");
         }
 
+
+        public void InteractionMenu(TamagotchiAbility specie)
+        {
+            HorizontalLines();
+            Console.WriteLine($"\n Veja como {specie.Name} está \n ".ToUpper());
+            Console.WriteLine($"1 - Cheque Status do {specie.Name}");
+            Console.WriteLine($"2 - Alimentar {specie.Name}");
+            Console.WriteLine($"3 - Brincar com {specie.Name}");
+            Console.WriteLine("4 - Sair");
+        }
+
         public void GetavailableMascot(List<TamagotchiSpecies> species)
         {
             HorizontalLines();
@@ -81,15 +92,15 @@ namespace Tamagotchi.Model
             return choice - 1;
         }
 
-        public void MascotAbilities(TamagotchiAbility spceies)
+        public void MascotAbilities(TamagotchiAbility specie)
         {
-            Console.WriteLine($"\n Você escolheu {spceies.Name}!");
+            Console.WriteLine($"\n Você escolheu {specie.Name}!");
             Console.WriteLine($"\n Detalhes:");
-            Console.WriteLine($"- Peso: {spceies.Weight}");
-            Console.WriteLine($"- Altura: {spceies.Height}");
+            Console.WriteLine($"- Peso: {specie.Weight}");
+            Console.WriteLine($"- Altura: {specie.Height}");
 
             Console.Write($"- Habilidades: ");
-            foreach (var abilityDetail in spceies.abilities)
+            foreach (var abilityDetail in specie.abilities)
                 Console.Write(abilityDetail.Ability.Name);
 
             Console.WriteLine(" ");
@@ -103,10 +114,10 @@ namespace Tamagotchi.Model
 
                 Thread.Sleep(500);
                 Console.WriteLine("Você ainda não obteve nenhum mascote");
-
-            } else{
-
-                for(int i = 0; i < adoptedSpecies.Count; i++)
+            }
+            else{
+                
+                for (int i = 0; i < adoptedSpecies.Count; i++)
                     Console.WriteLine($"{adoptedSpecies[i].Name}");
             }
         }
