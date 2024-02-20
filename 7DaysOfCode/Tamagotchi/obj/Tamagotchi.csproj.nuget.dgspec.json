@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Asus\\Desktop\\Programacao\\projetos\\7DaysOfCode\\7DaysOfCode\\Tamagotchi\\Tamagotchi.csproj": {}
+    "C:\\Users\\Asus\\Desktop\\Programacao\\Projetos\\7DaysOfCode\\7DaysOfCode\\Tamagotchi\\Tamagotchi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Asus\\Desktop\\Programacao\\projetos\\7DaysOfCode\\7DaysOfCode\\Tamagotchi\\Tamagotchi.csproj": {
+    "C:\\Users\\Asus\\Desktop\\Programacao\\Projetos\\7DaysOfCode\\7DaysOfCode\\Tamagotchi\\Tamagotchi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Asus\\Desktop\\Programacao\\projetos\\7DaysOfCode\\7DaysOfCode\\Tamagotchi\\Tamagotchi.csproj",
+        "projectUniqueName": "C:\\Users\\Asus\\Desktop\\Programacao\\Projetos\\7DaysOfCode\\7DaysOfCode\\Tamagotchi\\Tamagotchi.csproj",
         "projectName": "Tamagotchi",
-        "projectPath": "C:\\Users\\Asus\\Desktop\\Programacao\\projetos\\7DaysOfCode\\7DaysOfCode\\Tamagotchi\\Tamagotchi.csproj",
+        "projectPath": "C:\\Users\\Asus\\Desktop\\Programacao\\Projetos\\7DaysOfCode\\7DaysOfCode\\Tamagotchi\\Tamagotchi.csproj",
         "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Asus\\Desktop\\Programacao\\projetos\\7DaysOfCode\\7DaysOfCode\\Tamagotchi\\obj\\",
+        "outputPath": "C:\\Users\\Asus\\Desktop\\Programacao\\Projetos\\7DaysOfCode\\7DaysOfCode\\Tamagotchi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config"

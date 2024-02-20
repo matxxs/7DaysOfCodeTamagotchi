@@ -8,7 +8,9 @@ namespace Tamagotchi
         static void Main(string[] args)
         {
             TamagotchiController tamagotchiController = new TamagotchiController();  
-            tamagotchiController.Play();          
+            tamagotchiController.Play();
+            //TamagotchiStatus testes = new TamagotchiStatus();
+            //testes.ToPlay();      
         }
     }
 }
