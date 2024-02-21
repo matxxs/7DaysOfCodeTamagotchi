@@ -60,8 +60,13 @@ public TamagotchiController()
 
                                         if (confirmAdoption){
 
-                                            adoptedSpecies.Add(ability);
-                                            Console.WriteLine("\n\nParabéns! Você adotou um " + ability.Name + "!"); 
+                                            if (choiceMascot >= 0 && choiceMascot < availableMascot.Count)
+                                            {
+                                                Console.WriteLine("Eu entrei aqui ");
+                                                availableMascot.RemoveAt(choiceMascot);
+                                                adoptedSpecies.Add(ability);
+                                                Console.WriteLine("\n\nParabéns! Você adotou um " + ability.Name + "!");
+                                            } 
                                         }
                                     break;
 
