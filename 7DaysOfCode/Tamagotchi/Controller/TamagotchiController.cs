@@ -11,13 +11,19 @@ namespace Tamagotchi.Controller
         private List<TamagotchiSpecies> availableMascot { get; set; }
         private List<TamagotchiAbility> adoptedSpecies { get; set; }
 
-        public TamagotchiController()
+public TamagotchiController()
         {
             tamagotchiView = new TamagotchiView();
             pokemonApiRequest = new PokemonApiRequest();
-            availableMascot = pokemonApiRequest.GetAvailableSpecies();
             adoptedSpecies = new List<TamagotchiAbility>();
+
+            InitializeAsync().Wait();
         }
+
+        public async Task InitializeAsync()
+        {
+            availableMascot = await pokemonApiRequest.GetAvailableSpecies();
+        }
 
         public void Play()
         {

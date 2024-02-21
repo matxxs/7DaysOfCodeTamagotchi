@@ -240,11 +240,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Asus\\Desktop\\Programacao\\projetos\\7DaysOfCode\\7DaysOfCode\\Tamagotchi\\Tamagotchi.csproj",
+      "projectUniqueName": "C:\\Users\\Asus\\Desktop\\Programacao\\Projetos\\7DaysOfCode\\7DaysOfCode\\Tamagotchi\\Tamagotchi.csproj",
       "projectName": "Tamagotchi",
-      "projectPath": "C:\\Users\\Asus\\Desktop\\Programacao\\projetos\\7DaysOfCode\\7DaysOfCode\\Tamagotchi\\Tamagotchi.csproj",
+      "projectPath": "C:\\Users\\Asus\\Desktop\\Programacao\\Projetos\\7DaysOfCode\\7DaysOfCode\\Tamagotchi\\Tamagotchi.csproj",
       "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Asus\\Desktop\\Programacao\\projetos\\7DaysOfCode\\7DaysOfCode\\Tamagotchi\\obj\\",
+      "outputPath": "C:\\Users\\Asus\\Desktop\\Programacao\\Projetos\\7DaysOfCode\\7DaysOfCode\\Tamagotchi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -265,6 +265,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -296,7 +301,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

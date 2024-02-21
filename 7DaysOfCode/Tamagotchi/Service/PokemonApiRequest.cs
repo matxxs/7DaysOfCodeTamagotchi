@@ -7,19 +7,42 @@ namespace Tamagotchi.Service
 {
     public class PokemonApiRequest
     {
-        public List<TamagotchiSpecies> GetAvailableSpecies()
+        public async Task<List<TamagotchiSpecies>> GetAvailableSpecies()
         {
-            var client = new RestClient($"https://pokeapi.co/api/v2/pokemon/?limit=4");
-            var request = new RestRequest("",Method.Get);
-            var response = client.Execute(request);
+            var random = new Random();
+            var randomSpecies = new List<TamagotchiSpecies>();
+            int maxSpeciesView = 4;
 
-            if (response.StatusCode != System.Net.HttpStatusCode.OK){
+            var client = new RestClient($"https://pokeapi.co/api/v2/pokemon/");
 
-                CheckedAPI(response.StatusCode);
+            for(int i = 0; i < maxSpeciesView; i++){
+                
+                int randomPokemonId = random.Next(1, 1000);
+                var request = new RestRequest($"{randomPokemonId}", Method.Get);
+                var response = await client.ExecuteAsync<TamagotchiSpecies>(request);
+
+                     if (response.StatusCode != System.Net.HttpStatusCode.OK)
+                    {
+                        CheckedAPI(response.StatusCode);
+                    }
+
+                var randomPokemon = response.Data;
+                randomSpecies.Add(randomPokemon);
             }
 
-            var requestSpecies =  JsonConvert.DeserializeObject<TamagotchiApiResult>(response.Content);
-            return requestSpecies.Results;
+            return randomSpecies;
+
+            // var client = new RestClient($"https://pokeapi.co/api/v2/pokemon/?limit=4");
+            // var request = new RestRequest("",Method.Get);
+            // var response = client.Execute(request);
+
+            // if (response.StatusCode != System.Net.HttpStatusCode.OK){
+
+            //     CheckedAPI(response.StatusCode);
+            // }
+
+            // var requestSpecies =  JsonConvert.DeserializeObject<TamagotchiApiResult>(response.Content);
+            // return requestSpecies.Results;
      
         }
 

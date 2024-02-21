@@ -11,9 +11,9 @@ C:\Users\Asus\Desktop\Programacao\projetos\7DaysOfCode\7DaysOfCode\Tamagotchi\bi
 C:\Users\Asus\Desktop\Programacao\projetos\7DaysOfCode\7DaysOfCode\Tamagotchi\bin\Debug\net8.0\Tamagotchi.pdb
 C:\Users\Asus\Desktop\Programacao\projetos\7DaysOfCode\7DaysOfCode\Tamagotchi\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\Asus\Desktop\Programacao\projetos\7DaysOfCode\7DaysOfCode\Tamagotchi\bin\Debug\net8.0\RestSharp.dll
-C:\Users\Asus\Desktop\Programacao\projetos\7DaysOfCode\7DaysOfCode\Tamagotchi\obj\Debug\net8.0\Tamagotchi.csproj.CopyComplete
 C:\Users\Asus\Desktop\Programacao\projetos\7DaysOfCode\7DaysOfCode\Tamagotchi\obj\Debug\net8.0\Tamagotchi.dll
 C:\Users\Asus\Desktop\Programacao\projetos\7DaysOfCode\7DaysOfCode\Tamagotchi\obj\Debug\net8.0\refint\Tamagotchi.dll
 C:\Users\Asus\Desktop\Programacao\projetos\7DaysOfCode\7DaysOfCode\Tamagotchi\obj\Debug\net8.0\Tamagotchi.pdb
 C:\Users\Asus\Desktop\Programacao\projetos\7DaysOfCode\7DaysOfCode\Tamagotchi\obj\Debug\net8.0\Tamagotchi.genruntimeconfig.cache
 C:\Users\Asus\Desktop\Programacao\projetos\7DaysOfCode\7DaysOfCode\Tamagotchi\obj\Debug\net8.0\ref\Tamagotchi.dll
+C:\Users\Asus\Desktop\Programacao\Projetos\7DaysOfCode\7DaysOfCode\Tamagotchi\obj\Debug\net8.0\Tamagotchi.csproj.Up2Date
