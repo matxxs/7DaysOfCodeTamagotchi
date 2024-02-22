@@ -1,5 +1,6 @@
 ﻿using System;
 using Tamagotchi.Controller;
+using Tamagotchi.Model;
 
 namespace Tamagotchi
 {
@@ -8,9 +9,7 @@ namespace Tamagotchi
         static void Main(string[] args)
         {
             TamagotchiController tamagotchiController = new TamagotchiController();  
-            tamagotchiController.Play();
-            //TamagotchiStatus testes = new TamagotchiStatus();
-            //testes.ToPlay();      
+            tamagotchiController.Play();  
         }
     }
 }

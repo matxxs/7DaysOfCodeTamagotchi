@@ -1,5 +1,4 @@
 using System;
-using System.Runtime.CompilerServices;
 using Tamagotchi.Model;
 
 namespace Tamagotchi.Model
@@ -12,71 +11,81 @@ namespace Tamagotchi.Model
         public int Height   { get; set; }
         public int Weight   { get; set; } 
         public string? Name  { get; set; }
-    
+        public List<Ability> abilities {get; set;}
+
+        public TamagotchiStatus()
+        {
+            var random = new Random();
+            Food = random.Next(0, 10);
+            Humor =  random.Next(0, 10);
+            Energy = random.Next(0, 10);
+        }
+
+        public void UpdateProperties(TamagotchiAbility details)
+        {
+            Name = details.Name;
+            Height = details.Height;
+            Weight = details.Weight;
+            abilities = details.abilities.Select(a => new Ability { Name = a.Ability.Name }).ToList();
+        }
 
         public void Status()
         {
-            Food = 10;
-            Humor =  5;
-            Energy = 5;
-
+            Console.WriteLine();
+            Console.WriteLine("[Alimentação]: " + Food);
+            Console.WriteLine("[Humor]: " + Humor);
+            Console.WriteLine("[Energia]: " + Energy);
         }
 
         public void ToFeed()
         {
-            // Alimentar ++
-            // Energia --
+            Food += 2;
+            Energy -=  1;
 
-            checkFood();
+            Console.WriteLine("\n Mascote Alimentado");
+            CheckedStatus();
         }
 
         public void ToPlay()
         {
-            // Humor ++
-            // Energia --
-            // Alimentar -
+            Humor += 3;
+            Energy -= 2;
+            Food -= 1;
 
-            checkHumor();
+            Console.WriteLine("\n Mascote Feliz");
+            CheckedStatus();
         }
 
         public void Rest()
         {
-            // Energy ++
-            // Humor --
-            // Food --
+            Energy += 2;
+            Humor -= 2;
+            Food -= 1;
 
-            checkEnergy();
+            Console.WriteLine("\n [ZZZZZ] Mascote dormindo");
+            CheckedStatus();
         }
 
-        private void checkFood()
+        private void CheckedStatus()
         {
-            if(Food <= 5){
-                Console.WriteLine("[Alimentar]: Estou ficando com Fome");
-            }
-            else if (Food < 3){
-                Console.WriteLine("[Alimentar]: Quero Coomer");
-            }
-            else{
-                Console.WriteLine("Que gostoso");   
-            } 
-        }
+            if(Food < 4 || Energy < 4 || Humor < 4)
+            {
+                Console.WriteLine("\n [ALERTA] \n");
 
-        private void checkEnergy()
-        {
-            if (Energy <= 3){
-                Console.WriteLine("[Energia]: Estou ficando Cansando");  
-            } 
-        }
+                if(Food < 4)
+                    Console.WriteLine("[Alimentar]: Quero Coomer");
 
-        private void checkHumor()
-        {
-            if(Humor <= 3){
+                if(Energy < 4)
+                    Console.WriteLine("[Energia]: Estou ficando Cansando");
 
-                Console.WriteLine("[Humor]: Brinque comigo");
-            } else {
-                Console.WriteLine("[Humor]: Que divertido");
+                if(Humor < 4)
+                    Console.WriteLine("[Humor]: Brinque comigo");
             }
         }
 
+        public class Ability{
+            
+            public string Name {get; set; }
+        }
     }    
 }

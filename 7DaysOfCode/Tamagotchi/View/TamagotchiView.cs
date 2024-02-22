@@ -55,14 +55,16 @@ namespace Tamagotchi.Model
         }
 
 
-        public void InteractionMenu(TamagotchiAbility specie)
+        public void InteractionMenu(TamagotchiStatus specie)
         {
             HorizontalLines();
             Console.WriteLine($"\n Veja como {specie.Name} está \n ".ToUpper());
             Console.WriteLine($"1 - Cheque Status do {specie.Name}");
             Console.WriteLine($"2 - Alimentar {specie.Name}");
             Console.WriteLine($"3 - Brincar com {specie.Name}");
-            Console.WriteLine("4 - Sair");
+            Console.WriteLine($"4 - Descansar");
+            Console.WriteLine("5 - Sair");
+            Console.Write("\n Escolha uma opção: ");
         }
 
         public void GetavailableMascot(List<TamagotchiSpecies> species)
@@ -106,7 +108,7 @@ namespace Tamagotchi.Model
             Console.WriteLine(" ");
         }
 
-        public void AdoptMascot(List<TamagotchiAbility> adoptedSpecies)
+        public void AdoptMascot(List<TamagotchiStatus> adoptedSpecies)
         {
             HorizontalLines();
             Console.WriteLine("\n MASCOTES ADOTADO \n");
@@ -118,7 +120,7 @@ namespace Tamagotchi.Model
             else{
                 
                 for (int i = 0; i < adoptedSpecies.Count; i++)
-                    Console.WriteLine($"{adoptedSpecies[i].Name}");
+                    Console.WriteLine($"{i + 1}. {adoptedSpecies[i].Name}");
             }
         }
 
